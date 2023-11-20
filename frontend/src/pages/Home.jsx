@@ -11,10 +11,16 @@ import { fetchUserThunk } from "../store/slices/userSlice";
 
 const Home = () => {
   const dispatch = useDispatch();
+  const [todoModal, setTodoModal] = useState(false);
+
   useEffect(() => {
-    dispatch(fetchTodosThunk());
+    !todoModal && dispatch(fetchTodosThunk());
+  }, [todoModal]);
+
+  useEffect(() => {
     dispatch(fetchUserThunk());
   }, []);
+
   const [userSetting, setUserSetting] = useState(false);
   const todoList = useSelector((s) => s.todo.todoList);
   const status = useSelector((s) => s.todo.status);
@@ -63,7 +69,7 @@ const Home = () => {
     <div className="container">
       <h1 className={styles.title}>TODO LIST</h1>
       <div className={styles.app__wrapper}>
-        <Header />
+        <Header todoModal={todoModal} setTodoModal={setTodoModal} />
       </div>
       <motion.div
         className={styles.content__wrapper}

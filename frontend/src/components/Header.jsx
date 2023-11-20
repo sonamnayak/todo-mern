@@ -4,9 +4,8 @@ import TodoModal from "./TodoModal";
 import { useDispatch } from "react-redux";
 import { updateFilterStatus } from "../store/slices/todoSlice";
 
-const Header = () => {
+const Header = ({ todoModal, setTodoModal }) => {
   const dispatch = useDispatch();
-  const [todoModal, setTodoModal] = useState(false);
   const [filterStatus, setFilterStatus] = useState("all");
 
   const handleStatus = (e) => {
