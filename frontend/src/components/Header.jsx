@@ -20,7 +20,7 @@ const Header = ({ todoModal, setTodoModal }) => {
         className={`${styles.button} ${styles.button__primary} ${styles.add_task}`}
         onClick={() => setTodoModal(true)}
       >
-        {window.screen.size > 768 ? "Add Task" : <MdOutlineAdd />}
+        {window.screen.width > 768 ? "Add Task" : <MdOutlineAdd />}
       </button>
       <select
         className={`${styles.button} ${styles.button__select}`}

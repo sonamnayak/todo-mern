@@ -79,7 +79,6 @@
     width: 150px;
     cursor: pointer;
     @include smallDeviceSize {
-      width: 100px;
       padding: 0.7rem;
     }
   }
