@@ -28,6 +28,9 @@
   align-items: center;
   justify-content: space-between;
   height: 60px;
+  @include smallDeviceSize {
+    height: 45px;
+  }
 }
 
 .content__wrapper {
@@ -37,7 +40,7 @@
   margin-block: 20px;
   @include smallDeviceSize {
     padding: 1.5rem;
-    margin-block: 10px;
+    margin-top: 10px;
   }
 }
 
@@ -73,9 +76,12 @@
     padding: 1rem;
     border: none;
     background-color: var(--bg-3);
-
     width: 150px;
     cursor: pointer;
+    @include smallDeviceSize {
+      width: 100px;
+      padding: 0.7rem;
+    }
   }
 }
 
@@ -142,6 +148,9 @@
   &:hover {
     background-color: #e32525;
     color: white;
+  }
+  @include smallScreenSize {
+    right: 0;
   }
 }
 
@@ -281,5 +290,16 @@
     color: var(--primaryPurple);
     cursor: pointer;
     font-weight: 500;
+  }
+}
+
+.add_task {
+  @include smallDeviceSize {
+    display: grid;
+    align-items: center;
+    padding: 0.4rem 1rem;
+  }
+  svg {
+    font-size: 30px;
   }
 }

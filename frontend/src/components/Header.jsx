@@ -3,6 +3,7 @@ import styles from "../styles/modules/app.module.scss";
 import TodoModal from "./TodoModal";
 import { useDispatch } from "react-redux";
 import { updateFilterStatus } from "../store/slices/todoSlice";
+import { MdOutlineAdd } from "react-icons/md";
 
 const Header = ({ todoModal, setTodoModal }) => {
   const dispatch = useDispatch();
@@ -16,10 +17,10 @@ const Header = ({ todoModal, setTodoModal }) => {
   return (
     <div className={styles.appHeader}>
       <button
-        className={`${styles.button} ${styles.button__primary}`}
+        className={`${styles.button} ${styles.button__primary} ${styles.add_task}`}
         onClick={() => setTodoModal(true)}
       >
-        Add Task
+        {window.screen.size > 768 ? "Add Task" : <MdOutlineAdd />}
       </button>
       <select
         className={`${styles.button} ${styles.button__select}`}
