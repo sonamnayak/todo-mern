@@ -8,7 +8,7 @@ const cookieParser = require("cookie-parser");
 const app = express();
 app.use(cors(
   {
-    origin: ["https://todo-mern-sonamnayak.vercel.app"],
+    origin: ["https://todo-mern-frontend-sonamnayak.vercel.app"],
     methods: ["POST", "GET", "PUT"],
     credentials: true
   }
