@@ -30,7 +30,7 @@ router
             return res
               .cookie("access_token", token, {
                 secure: req.secure,
-                sameSite: 'None'
+                sameSite: "None",
               })
               .json({ message: "User found." });
           } else
@@ -66,7 +66,7 @@ router
       .catch((err) => next(err));
   })
   .get("/logout", (req, res) => {
-    res.clearCookie("access_token");
+    res.clearCookie("access_token", { secure: req.secure, sameSite: "None" });
     return res.json({ message: "User logged out successfully." });
   })
   .get("/is_logged_in", (req, res) => {
