@@ -29,7 +29,7 @@ router
             });
             return res
               .cookie("access_token", token, {
-                httpOnly: true,
+                secure: req.secure
               })
               .json({ message: "User found." });
           } else

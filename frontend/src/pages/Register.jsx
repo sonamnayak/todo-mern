@@ -15,7 +15,7 @@ const Register = () => {
     if (!(user.name && user.email && user.password))
       return toast.error("All fields are required!");
     axios
-      .post("/api/auth/register", user)
+      .post("https://todo-mern-backend-vliz.onrender.com/api/auth/register", user)
       .then(() => {
         toast.success("Registered successfully! Login to continue.");
         navigate("/login");
