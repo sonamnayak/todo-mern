@@ -9,7 +9,7 @@ const STATUSES = Object.freeze({
 });
 
 export const fetchTodosThunk = createAsyncThunk("todos/fetch", async () => {
-  const res = await axios.get("/api/tasks");
+  const res = await axios.get("https://todo-mern-sonamnayak.vercel.app/api/tasks");
   return res.data;
 });
 
