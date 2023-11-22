@@ -7,8 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       "/api": {
-        target: "https://todo-mern-backend-vliz.onrender.com",
-        changeOrigin: true,
+        target: "https://todo-mern-sonamnayak.vercel.app",
       },
     },
   },

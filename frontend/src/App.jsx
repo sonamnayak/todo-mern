@@ -3,8 +3,7 @@ import {
   BrowserRouter,
   Routes,
   Route,
-  Navigate,
-  useNavigate,
+  Navigate
 } from "react-router-dom";
 import Home from "./pages/Home";
 import UserSetting from "./pages/UserSetting";
