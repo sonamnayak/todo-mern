@@ -60,6 +60,7 @@ const todoSlice = createSlice({
       axios
         .put(
           `https://todo-mern-backend-vliz.onrender.com/api/tasks/${action.payload._id}`,
+          action.payload,
           { withCredentials: true }
         )
         .catch((err) => console.log(err));
