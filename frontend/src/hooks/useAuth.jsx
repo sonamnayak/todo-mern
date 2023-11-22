@@ -6,7 +6,7 @@ const useAuth = () => {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const res = await axios.get("https://todo-mern-sonamnayak.vercel.app/api/auth/is_logged_in");
+        const res = await axios.get("/api/auth/is_logged_in");
         setAuth(res.data.isLoggedIn);
       } catch (err) {
         console.log(err);

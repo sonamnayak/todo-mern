@@ -7,9 +7,11 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { fetchUserThunk } from "../store/slices/userSlice";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const UserSetting = ({ setUserSetting, userSetting }) => {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   useEffect(() => {
     dispatch(fetchUserThunk());
   }, [userSetting]);
