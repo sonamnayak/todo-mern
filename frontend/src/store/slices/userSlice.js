@@ -2,7 +2,10 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const fetchUserThunk = createAsyncThunk("user/fetch", async () => {
-  const res = await axios.get("https://todo-mern-backend-vliz.onrender.com/api/users");
+  const res = await axios.get(
+    "https://todo-mern-backend-vliz.onrender.com/api/users",
+    { withCredentials: true }
+  );
   return res.data;
 });
 

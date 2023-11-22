@@ -43,7 +43,9 @@ const UserSetting = ({ setUserSetting, userSetting }) => {
 
   const handleLogout = () => {
     axios
-      .get("https://todo-mern-backend-vliz.onrender.com/api/auth/logout")
+      .get("https://todo-mern-backend-vliz.onrender.com/api/auth/logout", {
+        withCredentials: true,
+      })
       .then(() => {
         toast.success("You have been logged out. Login to continue.");
         navigate("/login");
@@ -59,7 +61,9 @@ const UserSetting = ({ setUserSetting, userSetting }) => {
     if (userData.username !== user.username || userData.email !== user.email) {
       setUser({ username: user.username, email: user.email });
       axios
-        .put("https://todo-mern-backend-vliz.onrender.com/api/users", user)
+        .put("https://todo-mern-backend-vliz.onrender.com/api/users", user, {
+          withCredentials: true,
+        })
         .then((res) => {
           toast.success("Updated Successfully!");
           setUserSetting(false);

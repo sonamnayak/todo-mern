@@ -9,7 +9,10 @@ const STATUSES = Object.freeze({
 });
 
 export const fetchTodosThunk = createAsyncThunk("todos/fetch", async () => {
-  const res = await axios.get("/api/tasks");
+  const res = await axios.get(
+    "https://todo-mern-backend-vliz.onrender.com/api/tasks",
+    { withCredentials: true }
+  );
   return res.data;
 });
 
@@ -24,7 +27,11 @@ const todoSlice = createSlice({
     addTodo: (state, action) => {
       state.todoList.push(action.payload);
       axios
-        .post("https://todo-mern-backend-vliz.onrender.com/api/tasks", action.payload)
+        .post(
+          "https://todo-mern-backend-vliz.onrender.com/api/tasks",
+          action.payload,
+          { withCredentials: true }
+        )
         .then(() => toast.success("Task added successfully!"))
         .catch((err) => console.log(err));
     },
@@ -33,7 +40,10 @@ const todoSlice = createSlice({
         (todo) => todo._id !== action.payload
       );
       axios
-        .delete(`https://todo-mern-backend-vliz.onrender.com/api/tasks/${action.payload}`)
+        .delete(
+          `https://todo-mern-backend-vliz.onrender.com/api/tasks/${action.payload}`,
+          { withCredentials: true }
+        )
         .then(() => toast.success("Task deleted successfully!"))
         .catch((err) => console.log(err));
       state.todoList = todoItems;
@@ -48,7 +58,10 @@ const todoSlice = createSlice({
       });
       state.todoList = todoItems;
       axios
-        .put(`https://todo-mern-backend-vliz.onrender.com/api/tasks/${action.payload._id}`)
+        .put(
+          `https://todo-mern-backend-vliz.onrender.com/api/tasks/${action.payload._id}`,
+          { withCredentials: true }
+        )
         .catch((err) => console.log(err));
     },
     updateFilterStatus: (state, action) => {

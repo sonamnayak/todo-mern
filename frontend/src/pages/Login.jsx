@@ -14,7 +14,11 @@ const Login = () => {
     if (!(user.email && user.password))
       return toast.error("All fields are required!");
     axios
-      .post("https://todo-mern-backend-vliz.onrender.com/api/auth/login", user)
+      .post(
+        "https://todo-mern-backend-vliz.onrender.com/api/auth/login",
+        user,
+        { withCredentials: true }
+      )
       .then(() => {
         toast.success("Logged in successfully!");
         navigate("/");

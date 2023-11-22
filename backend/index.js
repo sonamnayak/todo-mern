@@ -6,8 +6,13 @@ const morgan = require("morgan");
 const cookieParser = require("cookie-parser");
 
 const app = express();
-app.set('trust proxy', 1);
-app.use(cors());
+app.set("trust proxy", 1);
+app.use(
+  cors({
+    origin: "https://todo-mern-frontend-7ufj.onrender.com",
+    credentials: true,
+  })
+);
 app.use(morgan("tiny"));
 app.use(express.json());
 app.use(cookieParser());
