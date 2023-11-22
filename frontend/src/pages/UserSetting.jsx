@@ -42,6 +42,7 @@ const UserSetting = ({ setUserSetting, userSetting }) => {
   };
 
   const handleLogout = () => {
+    e.preventDefault();
     axios
       .get("https://todo-mern-backend-vliz.onrender.com/api/auth/logout", {
         withCredentials: true,
