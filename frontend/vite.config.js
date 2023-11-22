@@ -8,6 +8,7 @@ export default defineConfig({
     proxy: {
       "/api": {
         target: "https://todo-mern-sonamnayak.vercel.app",
+        changeOrigin: "true"
       },
     },
   },
